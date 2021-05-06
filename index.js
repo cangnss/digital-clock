@@ -32,7 +32,21 @@ function showTime(){
             todayName = "Pazar";
             break;
     }
-    clockDiv.innerHTML = `<span>${today.getHours()}:${today.getMinutes()}:${today.getSeconds()} ${todayName}</span>`;
+    var hour = today.getHours();
+    var minutes = today.getMinutes();
+    var second = today.getSeconds();
+
+    if(hour<10){
+        hour = "0" + hour;
+    }
+    if(minutes<10){
+        minutes = "0" + minutes;
+    }
+    if(second<10){
+        second = "0" + second;
+    }
+    clockDiv.innerHTML = `<span>${hour}:${minutes}:${second} ${todayName}</span>`;
+    
 }
 
 showTime();
